@@ -33,8 +33,8 @@ e sempre mostram o domínio usado e as fontes consultadas.
 
 | # | Item pedido | Onde está | Situação |
 |---|---|---|---|
-| 1 | Repositório GitHub | https://github.com/henriquepella/areco | Código completo na branch `main`, cada etapa em seu próprio branch |
-| 2 | Execução via Docker | `backend/Dockerfile`, `docker-compose.yml`, `.env.example`, [instruções](#execução-com-docker) | **Verificado no CI:** o passo a passo do README roda a cada push; todas as 13 execuções passaram ([exemplo](https://github.com/henriquepella/areco/actions/runs/39518745059)) |
+| 1 | Repositório GitHub | https://github.com/henriquepella/aurora-assistente | Código completo na branch `main`, cada etapa em seu próprio branch |
+| 2 | Execução via Docker | `backend/Dockerfile`, `docker-compose.yml`, `.env.example`, [instruções](#execução-com-docker) | **Verificado no CI:** o passo a passo do README roda a cada push; todas as 13 execuções passaram ([exemplo](https://github.com/henriquepella/aurora-assistente/actions/runs/39518745059)) |
 | 3 | Frontend | `frontend/` (HTML, CSS e JS puro) | Funcionando; testado em desktop e celular |
 | 4 | Orquestrador e agentes | `backend/app/agents/` | Funcionando; roteamento 32/32 na avaliação |
 | 5 | Uso das bases de conhecimento | `backend/app/knowledge_base/`, `services/document_service.py`, `services/retrieval_service.py` | Carregadas e indexadas automaticamente na inicialização |
@@ -64,7 +64,7 @@ e sempre mostram o domínio usado e as fontes consultadas.
   barreiras contra invenção, recusas e erros caem no modo extrativo). **A avaliação com um modelo
   real foi tentada, mas não concluída**: o workflow manual chegou à API da Anthropic com o Claude
   Opus 5.5, e a API recusou a primeira chamada por falta de crédito na conta (`HTTP 400`, *credit
-  balance is too low*; [execução](https://github.com/henriquepella/areco/actions/runs/39523635866)).
+  balance is too low*; [execução](https://github.com/henriquepella/aurora-assistente/actions/runs/39523635866)).
   Todos os resultados publicados são do modo sem modelo. Com crédito na conta, a medição roda pelo
   mesmo workflow, descrito em [Avaliação com modelo](#avaliação-com-modelo-de-linguagem).
 - **Docker:** não foi executado na máquina de desenvolvimento (sem Docker instalado), mas
@@ -72,7 +72,7 @@ e sempre mostram o domínio usado e as fontes consultadas.
   o README num runner Linux do GitHub — `cp .env.example .env`, `docker compose up --build`,
   healthcheck, `/health`, frontend, `/api/chat` com valor conferido nos CSVs, 38 perguntas contra o
   container, volume de logs e `pytest` dentro do container. Todas as execuções até agora
-  passaram (27 em 2026-10-20); exemplo com todas as etapas verdes: [https://github.com/henriquepella/areco/actions/runs/39518745059](https://github.com/henriquepella/areco/actions/runs/39518745059). Docker Desktop no Windows e no
+  passaram (27 em 2026-10-20); exemplo com todas as etapas verdes: [https://github.com/henriquepella/aurora-assistente/actions/runs/39518745059](https://github.com/henriquepella/aurora-assistente/actions/runs/39518745059). Docker Desktop no Windows e no
   macOS não foi testado.
 - Itens fora do escopo desta versão: memória de conversa, autenticação, rate limiting, registro
   real de manifestações (não existe sistema transacional nos anexos) e PDF/DOCX (nenhum anexo
@@ -262,8 +262,8 @@ A classificação pode ser testada isoladamente em `POST /api/classify`.
 Pré-requisitos: [Docker](https://docs.docker.com/get-docker/) com Docker Compose v2.24+.
 
 ```bash
-git clone https://github.com/henriquepella/areco.git
-cd areco
+git clone https://github.com/henriquepella/aurora-assistente.git
+cd aurora-assistente
 cp .env.example .env
 docker compose up --build
 ```
@@ -293,7 +293,7 @@ Para usar outra porta, defina `APP_PORT` no `.env`.
 
 > Nota: o Docker não estava instalado na máquina de desenvolvimento. O passo a passo acima é
 > executado pelo workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml) em um runner Linux
-> do GitHub a cada push; todas as execuções passaram ([exemplo](https://github.com/henriquepella/areco/actions/runs/39518745059)).
+> do GitHub a cada push; todas as execuções passaram ([exemplo](https://github.com/henriquepella/aurora-assistente/actions/runs/39518745059)).
 
 ## Execução local sem Docker
 
@@ -586,7 +586,7 @@ entendimento de sinônimos, que é o papel do modelo de linguagem.
 **Tentada em 2026-10-20 e não concluída.** O secret `LLM_API_KEY` foi cadastrado e o workflow
 manual chegou à API da Anthropic, mas o teste de conexão foi recusado por falta de crédito na
 conta: `BadRequestError HTTP 400 invalid_request_error`, com a mensagem *credit balance is too
-low* ([execução](https://github.com/henriquepella/areco/actions/runs/39523635866)). Por isso
+low* ([execução](https://github.com/henriquepella/aurora-assistente/actions/runs/39523635866)). Por isso
 não há números com modelo nesta entrega. Com crédito na conta, a medição fica a um clique:
 
 1. No GitHub: *Settings → Secrets and variables → Actions → New repository secret*, nome
@@ -678,7 +678,7 @@ a cada push.
 
 ## Publicação no GitHub
 
-O remoto deste repositório é `https://github.com/henriquepella/areco`. Para publicar
+O remoto deste repositório é `https://github.com/henriquepella/aurora-assistente`. Para publicar
 alterações futuras:
 
 ```bash
