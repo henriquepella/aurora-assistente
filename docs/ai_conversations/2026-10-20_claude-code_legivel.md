@@ -447,7 +447,7 @@ Claude via SDK oficial `anthropic`; o provedor OpenAI-compatível (Ollama, etc.)
 
 ### Usuário, durante a execução · 2026-10-20 18:34:08
 
-https://github.com/henriquepella/areco
+https://github.com/henriquepella/aurora-assistente
 
 
 - ferramenta `Bash`: Add GitHub remote and list its refs
@@ -829,7 +829,7 @@ Tudo enviado: 11 branches mais a `main`, com merges sem conflito. Por último, e
 
 ### Claude · 2026-10-20 18:56:39
 
-O projeto está pronto e publicado em **https://github.com/henriquepella/areco**. Funciona sem chave de API e os 88 testes automatizados passam. Cada parte foi feita num branch próprio, com commit e merge na `main` sem erro, como você pediu (11 branches enviados).
+O projeto está pronto e publicado em **https://github.com/henriquepella/aurora-assistente**. Funciona sem chave de API e os 88 testes automatizados passam. Cada parte foi feita num branch próprio, com commit e merge na `main` sem erro, como você pediu (11 branches enviados).
 
 **O que foi construído**
 - **Orquestrador:** primeiro aplica regras com pesos por domínio e devolve a pontuação que levou à escolha. O modelo de IA só classifica quando as regras ficam em dúvida e há chave configurada. Pergunta ambígua recebe um pedido de esclarecimento; pergunta fora do tema é informada como fora do escopo.
@@ -1356,7 +1356,7 @@ Tudo publicado e acessível sem login. Por último, vejo o que a exportação da
 
 ### Claude · 2026-10-20 20:20:51
 
-Quase tudo está incluído, mas faltam **2 itens de entrega** (6 e 8) e há **1 risco**: o Docker nunca foi executado. Conferi no repositório público (https://github.com/henriquepella/areco abre sem login) e baixei cada arquivo obrigatório direto do GitHub.
+Quase tudo está incluído, mas faltam **2 itens de entrega** (6 e 8) e há **1 risco**: o Docker nunca foi executado. Conferi no repositório público (https://github.com/henriquepella/aurora-assistente abre sem login) e baixei cada arquivo obrigatório direto do GitHub.
 
 **Requisitos técnicos**
 
@@ -1691,7 +1691,7 @@ Os três itens estão prontos e na `main` do GitHub. Antes de entregar, dois pon
 - espera o container ficar saudável e testa a API, a interface e as 38 perguntas;
 - confere o arquivo de log e roda os testes dentro do container.
 
-Sem login eu não consigo ler o resultado. Confira em https://github.com/henriquepella/areco/actions. No README escrevi o status do Docker de um jeito que vale qualquer que seja o resultado; se falhar, cole o erro que eu corrijo.
+Sem login eu não consigo ler o resultado. Confira em https://github.com/henriquepella/aurora-assistente/actions. No README escrevi o status do Docker de um jeito que vale qualquer que seja o resultado; se falhar, cole o erro que eu corrijo.
 
 **O que foi feito**
 
@@ -2792,7 +2792,7 @@ O repositório voltou a ser público, e a API do GitHub mostra todas as execuç�
 - healthcheck, frontend e `/api/chat` com o valor conferido nos CSVs;
 - 38 perguntas contra o container, o volume de logs e o `pytest` dentro do container.
 
-O link de uma execução está citado no README como prova: https://github.com/henriquepella/areco/actions/runs/39518745059
+O link de uma execução está citado no README como prova: https://github.com/henriquepella/aurora-assistente/actions/runs/39518745059
 
 **3. Perguntas naturais: medidas com honestidade e melhoradas**
 Antes de corrigir qualquer coisa, criei um **conjunto de validação separado**: 15 perguntas em linguagem natural, com as respostas esperadas calculadas direto dos dados e marcadas como nunca usadas para ajuste.
@@ -2980,7 +2980,7 @@ Enviado. Espero o CI deste último commit para confirmar que a `main` final est�
 
 ### Claude · 2026-10-21 00:35:02
 
-Está tudo pronto para envio. Conferi os 9 itens direto no repositório público e o CI do commit final passou: https://github.com/henriquepella/areco/actions/runs/39522157442
+Está tudo pronto para envio. Conferi os 9 itens direto no repositório público e o CI do commit final passou: https://github.com/henriquepella/aurora-assistente/actions/runs/39522157442
 
 **Ajustes desta última passada**
 - **Item 6:** além das 38 perguntas no `/api/chat`, há um log real da **conversa guiada** que a interface usa: 19 turnos em 10 conversas, gravados pelo servidor. Os dois logs foram regravados com o código final, com o mascaramento de dados conferido.
@@ -2994,19 +2994,19 @@ Está tudo pronto para envio. Conferi os 9 itens direto no repositório público
 >
 > Olá,
 >
-> Segue a entrega do desafio. Repositório: **https://github.com/henriquepella/areco**
+> Segue a entrega do desafio. Repositório: **https://github.com/henriquepella/aurora-assistente**
 >
 > Para executar, com Docker instalado:
 > ```
-> git clone https://github.com/henriquepella/areco.git
-> cd areco
+> git clone https://github.com/henriquepella/aurora-assistente.git
+> cd aurora-assistente
 > cp .env.example .env        (no Windows: Copy-Item .env.example .env)
 > docker compose up --build
 > ```
-> A aplicação abre em http://localhost:8000 e funciona sem chave de API. Esse passo a passo roda automaticamente no GitHub Actions a cada push, com todas as execuções aprovadas: https://github.com/henriquepella/areco/actions
+> A aplicação abre em http://localhost:8000 e funciona sem chave de API. Esse passo a passo roda automaticamente no GitHub Actions a cada push, com todas as execuções aprovadas: https://github.com/henriquepella/aurora-assistente/actions
 >
 > Onde está cada item:
-> 1. **Repositório:** https://github.com/henriquepella/areco
+> 1. **Repositório:** https://github.com/henriquepella/aurora-assistente
 > 2. **Docker:** `backend/Dockerfile`, `docker-compose.yml`, `.env.example` e a seção "Execução com Docker" do README
 > 3. **Frontend:** `frontend/`. Tem seleção de agente, perguntas sugeridas geradas das bases, confirmação de intenção e fontes em cada resposta.
 > 4. **Orquestrador e agentes:** `backend/app/agents/` (orquestrador híbrido, agentes Financeiro, de Informações Internas e de Ouvidoria, e a camada de conversa guiada)
@@ -3085,7 +3085,7 @@ This session is being continued from a previous conversation that ran out of con
 Summary:
 1. Primary Request and Intent:
    - **Pedido original:** construir uma aplicação completa de IA, o agente orquestrador multidomínio "Assistente Aurora", seguindo o enunciado colado no início (FastAPI no backend, HTML/CSS/JS puro no frontend, RAG sobre as bases fornecidas, Docker, testes, AGENTS.md + diário, README em português, conversas com IA registradas). As bases estavam no zip `drive-download-20261020T183127Z-1-001.zip` (empresa fictícia Aurora Serviços Digitais S.A.).
-   - **Fluxo de Git pedido pelo usuário:** "para cada parte criada suba um commit em brenchs diferentes e va dando merge sem erro". Cada parte num branch, merge `--no-ff` na `main` e push para https://github.com/henriquepella/areco (repositório informado pelo usuário).
+   - **Fluxo de Git pedido pelo usuário:** "para cada parte criada suba um commit em brenchs diferentes e va dando merge sem erro". Cada parte num branch, merge `--no-ff` na `main` e push para https://github.com/henriquepella/aurora-assistente (repositório informado pelo usuário).
    - **Pedidos seguintes:**
      - rodar o projeto;
      - redesenhar a identidade visual com animação de digitação;
@@ -3219,7 +3219,7 @@ Summary:
    - /senior-backend (skill).
    - /senior-frontend (skill).
    - /anthropic-skills:git-commit-helper com "para cada parte criada suba um commit em brenchs diferentes e va dando merge sem erro".
-   - "https://github.com/henriquepella/areco" (enviado durante a execução).
+   - "https://github.com/henriquepella/aurora-assistente" (enviado durante a execução).
    - "rode o projeto".
    - Captura de tela + "Preciso do projeto com uma identidade visual melhor e mais bonita, as os textos precisam estar melhores posicionados e quando for feito uma pergunta colocar uma leve animacao como se o robo estivesse digitando, como se fosse uma conversa com alguem mesmo".
    - Texto do e-mail do desafio colado + "Tudo que esta aqui foi incluido?"
@@ -3241,7 +3241,7 @@ Summary:
      - acrescentar um teste para describe_error/last_error;
      - rodar a suíte, commitar no branch `fix/llm-eval-diagnostics`, fazer merge e push;
      - pedir ao usuário que dispare uma **execução nova** com "Run workflow" (o re-run usaria a definição antiga);
-     - ler as anotações em `https://api.github.com/repos/henriquepella/areco/check-runs/{job_id}/annotations` para saber o resultado.
+     - ler as anotações em `https://api.github.com/repos/henriquepella/aurora-assistente/check-runs/{job_id}/annotations` para saber o resultado.
    - Se o modelo funcionar: registrar os números reais no README (substituindo "não realizada nesta entrega") e no diário; possivelmente gravar um log de interações com o modelo em docs/logs e reexportar a conversa.
 
 8. Current Work:
