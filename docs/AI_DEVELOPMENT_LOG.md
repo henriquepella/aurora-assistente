@@ -33,7 +33,7 @@ Nenhuma entrada contém segredos. Resultados de testes são copiados de execuç�
 
 ### 2026-10-20 — Etapa 2: arquitetura e decisões técnicas
 - **Prompt (resumo):** usuário pediu commits por parte em branches separados com merge na `main`
-  (skill `git-commit-helper`) e informou o remoto `github.com/henriquepella/areco`.
+  (skill `git-commit-helper`) e informou o remoto `github.com/henriquepella/aurora-assistente`.
 - **Decisões:**
   - **Busca:** BM25 implementado em Python puro, um índice por domínio. Alternativas
     consideradas: `rank_bm25` (dependência extra para ~40 linhas) e embeddings/banco vetorial
