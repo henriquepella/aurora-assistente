@@ -19,7 +19,7 @@
    foram aproveitadas, porque o enunciado proíbe frameworks).
 4. `/git-commit-helper` com o pedido literal: *"para cada parte criada suba um commit em brenchs
    diferentes e va dando merge sem erro"*.
-5. URL do repositório: `https://github.com/henriquepella/areco`.
+5. URL do repositório: `https://github.com/henriquepella/aurora-assistente`.
 6. "rode o projeto".
 7. Captura de tela da interface + pedido: *"Preciso do projeto com uma identidade visual melhor e
    mais bonita, as os textos precisam estar melhores posicionados e quando for feito uma pergunta
